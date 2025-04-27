@@ -1,0 +1,373 @@
+[
+    {
+      "id": "slime",
+      "name": "史莱姆",
+      "health": 30,
+      "attack": 5,
+      "image": "assets/images/enemies/slime.png",
+      "type": "normal",
+      "description": "一种常见的黏性生物，攻击力较弱但生命力顽强。",
+      "actions": [
+        {
+          "type": "attack",
+          "value": 5,
+          "weight": 70
+        },
+        {
+          "type": "defend",
+          "value": 5,
+          "weight": 30
+        }
+      ],
+      "rewards": {
+        "gold": 10,
+        "experience": 20
+      }
+    },
+    {
+      "id": "goblin",
+      "name": "哥布林",
+      "health": 40,
+      "attack": 8,
+      "image": "assets/images/enemies/goblin.png",
+      "type": "normal",
+      "description": "狡猾的小型生物，喜欢使用简单武器进行攻击。",
+      "actions": [
+        {
+          "type": "attack",
+          "value": 8,
+          "weight": 60
+        },
+        {
+          "type": "attack_multi",
+          "value": 4,
+          "times": 2,
+          "weight": 20
+        },
+        {
+          "type": "defend",
+          "value": 6,
+          "weight": 20
+        }
+      ],
+      "rewards": {
+        "gold": 15,
+        "experience": 25
+      }
+    },
+    {
+      "id": "skeleton",
+      "name": "骷髅兵",
+      "health": 45,
+      "attack": 10,
+      "image": "assets/images/enemies/skeleton.png",
+      "type": "normal",
+      "description": "亡灵生物，挥舞着生锈的剑进行攻击。",
+      "actions": [
+        {
+          "type": "attack",
+          "value": 10,
+          "weight": 50
+        },
+        {
+          "type": "defend",
+          "value": 8,
+          "weight": 30
+        },
+        {
+          "type": "debuff",
+          "effect": "weakness",
+          "value": 0.2,
+          "duration": 2,
+          "weight": 20
+        }
+      ],
+      "rewards": {
+        "gold": 20,
+        "experience": 30
+      }
+    },
+    {
+      "id": "wolf",
+      "name": "狂狼",
+      "health": 35,
+      "attack": 12,
+      "image": "assets/images/enemies/wolf.png",
+      "type": "normal",
+      "description": "凶猛的野兽，攻击迅速而致命。",
+      "actions": [
+        {
+          "type": "attack",
+          "value": 12,
+          "weight": 40
+        },
+        {
+          "type": "attack_multi",
+          "value": 6,
+          "times": 2,
+          "weight": 40
+        },
+        {
+          "type": "buff",
+          "effect": "strength",
+          "value": 2,
+          "duration": 2,
+          "weight": 20
+        }
+      ],
+      "rewards": {
+        "gold": 18,
+        "experience": 28
+      }
+    },
+    {
+      "id": "orc",
+      "name": "兽人战士",
+      "health": 60,
+      "attack": 15,
+      "image": "assets/images/enemies/orc.png",
+      "type": "elite",
+      "description": "强壮的兽人，擅长近身战斗。",
+      "actions": [
+        {
+          "type": "attack",
+          "value": 15,
+          "weight": 50
+        },
+        {
+          "type": "defend",
+          "value": 12,
+          "weight": 20
+        },
+        {
+          "type": "buff",
+          "effect": "strength",
+          "value": 3,
+          "duration": 2,
+          "weight": 15
+        },
+        {
+          "type": "attack_multi",
+          "value": 8,
+          "times": 2,
+          "weight": 15
+        }
+      ],
+      "rewards": {
+        "gold": 30,
+        "experience": 45
+      }
+    },
+    {
+      "id": "dark_mage",
+      "name": "黑暗法师",
+      "health": 50,
+      "attack": 12,
+      "image": "assets/images/enemies/dark_mage.png",
+      "type": "elite",
+      "description": "掌握黑暗魔法的法师，擅长施加负面效果。",
+      "actions": [
+        {
+          "type": "attack",
+          "value": 12,
+          "weight": 30
+        },
+        {
+          "type": "debuff",
+          "effect": "weakness",
+          "value": 0.3,
+          "duration": 2,
+          "weight": 25
+        },
+        {
+          "type": "debuff",
+          "effect": "poison",
+          "value": 5,
+          "duration": 3,
+          "weight": 25
+        },
+        {
+          "type": "defend",
+          "value": 10,
+          "weight": 20
+        }
+      ],
+      "rewards": {
+        "gold": 35,
+        "experience": 50
+      }
+    },
+    {
+      "id": "golem",
+      "name": "石头傀儡",
+      "health": 80,
+      "attack": 10,
+      "image": "assets/images/enemies/golem.png",
+      "type": "elite",
+      "description": "由魔法赋予生命的石头生物，防御力极高。",
+      "actions": [
+        {
+          "type": "attack",
+          "value": 10,
+          "weight": 40
+        },
+        {
+          "type": "defend",
+          "value": 20,
+          "weight": 40
+        },
+        {
+          "type": "attack_multi",
+          "value": 5,
+          "times": 3,
+          "weight": 20
+        }
+      ],
+      "rewards": {
+        "gold": 40,
+        "experience": 55
+      }
+    },
+    {
+      "id": "dragon",
+      "name": "火龙",
+      "health": 150,
+      "attack": 20,
+      "image": "assets/images/enemies/dragon.png",
+      "type": "boss",
+      "description": "强大的龙族，能够喷吐烈焰，是最危险的敌人之一。",
+      "actions": [
+        {
+          "type": "attack",
+          "value": 20,
+          "weight": 30
+        },
+        {
+          "type": "attack_multi",
+          "value": 10,
+          "times": 3,
+          "weight": 20
+        },
+        {
+          "type": "debuff",
+          "effect": "burn",
+          "value": 8,
+          "duration": 3,
+          "weight": 20
+        },
+        {
+          "type": "buff",
+          "effect": "strength",
+          "value": 5,
+          "duration": 2,
+          "weight": 15
+        },
+        {
+          "type": "defend",
+          "value": 15,
+          "weight": 15
+        }
+      ],
+      "rewards": {
+        "gold": 100,
+        "experience": 120
+      }
+    },
+    {
+      "id": "necromancer",
+      "name": "死灵法师",
+      "health": 120,
+      "attack": 15,
+      "image": "assets/images/enemies/necromancer.png",
+      "type": "boss",
+      "description": "掌握死亡魔法的强大法师，能够操控亡灵。",
+      "actions": [
+        {
+          "type": "attack",
+          "value": 15,
+          "weight": 25
+        },
+        {
+          "type": "debuff",
+          "effect": "weakness",
+          "value": 0.4,
+          "duration": 3,
+          "weight": 20
+        },
+        {
+          "type": "debuff",
+          "effect": "poison",
+          "value": 10,
+          "duration": 3,
+          "weight": 20
+        },
+        {
+          "type": "attack_multi",
+          "value": 8,
+          "times": 2,
+          "weight": 20
+        },
+        {
+          "type": "defend",
+          "value": 12,
+          "weight": 15
+        }
+      ],
+      "rewards": {
+        "gold": 90,
+        "experience": 110
+      }
+    },
+    {
+      "id": "demon_lord",
+      "name": "恶魔领主",
+      "health": 200,
+      "attack": 25,
+      "image": "assets/images/enemies/demon_lord.png",
+      "type": "boss",
+      "description": "来自地狱的强大恶魔，拥有毁灭性的力量。",
+      "actions": [
+        {
+          "type": "attack",
+          "value": 25,
+          "weight": 25
+        },
+        {
+          "type": "attack_multi",
+          "value": 12,
+          "times": 3,
+          "weight": 20
+        },
+        {
+          "type": "debuff",
+          "effect": "weakness",
+          "value": 0.5,
+          "duration": 3,
+          "weight": 15
+        },
+        {
+          "type": "debuff",
+          "effect": "burn",
+          "value": 12,
+          "duration": 3,
+          "weight": 15
+        },
+        {
+          "type": "buff",
+          "effect": "strength",
+          "value": 8,
+          "duration": 2,
+          "weight": 15
+        },
+        {
+          "type": "defend",
+          "value": 20,
+          "weight": 10
+        }
+      ],
+      "rewards": {
+        "gold": 150,
+        "experience": 200
+      }
+    }
+  ]

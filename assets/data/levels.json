@@ -1,0 +1,132 @@
+[
+    {
+      "id": 1,
+      "name": "哥布林营地",
+      "description": "一群哥布林在此扎营，它们正在计划袭击附近的村庄。",
+      "difficulty": "easy",
+      "enemyId": "goblin",
+      "background": "assets/images/ui/background/battle.jpg",
+      "rewards": {
+        "gold": 50,
+        "experience": 100,
+        "cards": ["attack_basic", "defense_basic"]
+      }
+    },
+    {
+      "id": 2,
+      "name": "骷髅墓地",
+      "description": "这个古老的墓地充满了不死生物，它们由一股神秘的力量驱使。",
+      "difficulty": "easy",
+      "enemyId": "skeleton",
+      "background": "assets/images/ui/background/battle.jpg",
+      "rewards": {
+        "gold": 75,
+        "experience": 150,
+        "cards": ["skill_draw"]
+      }
+    },
+    {
+      "id": 3,
+      "name": "蜘蛛洞穴",
+      "description": "黑暗的洞穴中布满了巨大的蜘蛛网，洞穴深处有什么在等待着你？",
+      "difficulty": "medium",
+      "enemyId": "spider",
+      "background": "assets/images/ui/background/battle.jpg",
+      "rewards": {
+        "gold": 100,
+        "experience": 200,
+        "cards": ["attack_heavy"]
+      }
+    },
+    {
+      "id": 4,
+      "name": "哥布林萨满",
+      "description": "这个强大的哥布林萨满掌握着原始的魔法力量。",
+      "difficulty": "medium",
+      "enemyId": "goblin_shaman",
+      "background": "assets/images/ui/background/battle.jpg",
+      "rewards": {
+        "gold": 125,
+        "experience": 250,
+        "cards": ["skill_weaken"]
+      }
+    },
+    {
+      "id": 5,
+      "name": "哥布林王",
+      "description": "哥布林部落的首领，它比普通哥布林更强大、更聪明。",
+      "difficulty": "hard",
+      "enemyId": "goblin_king",
+      "background": "assets/images/ui/background/battle.jpg",
+      "rewards": {
+        "gold": 200,
+        "experience": 400,
+        "cards": ["power_strength"]
+      }
+    },
+    {
+      "id": 6,
+      "name": "亡灵法师",
+      "description": "掌握死亡魔法的法师，能够唤醒并控制亡灵。",
+      "difficulty": "hard",
+      "enemyId": "necromancer",
+      "background": "assets/images/ui/background/battle.jpg",
+      "rewards": {
+        "gold": 250,
+        "experience": 450,
+        "cards": ["skill_energy"]
+      }
+    },
+    {
+      "id": 7,
+      "name": "巨魔巢穴",
+      "description": "巨魔的领地，这些强壮的生物以其惊人的再生能力而闻名。",
+      "difficulty": "hard",
+      "enemyId": "troll",
+      "background": "assets/images/ui/background/battle.jpg",
+      "rewards": {
+        "gold": 300,
+        "experience": 500,
+        "cards": ["defense_strong"]
+      }
+    },
+    {
+      "id": 8,
+      "name": "元素祭坛",
+      "description": "一个古老的祭坛，元素力量在此汇聚，被一个强大的元素守卫所保护。",
+      "difficulty": "very_hard",
+      "enemyId": "elemental",
+      "background": "assets/images/ui/background/battle.jpg",
+      "rewards": {
+        "gold": 350,
+        "experience": 550,
+        "cards": ["attack_multi"]
+      }
+    },
+    {
+      "id": 9,
+      "name": "龙之巢穴",
+      "description": "一条古老的龙在此栖息，守护着它多年来收集的宝藏。",
+      "difficulty": "very_hard",
+      "enemyId": "dragon",
+      "background": "assets/images/ui/background/battle.jpg",
+      "rewards": {
+        "gold": 500,
+        "experience": 800,
+        "cards": ["power_strength", "attack_heavy"]
+      }
+    },
+    {
+      "id": 10,
+      "name": "黑暗神殿",
+      "description": "一座被遗忘的神殿，黑暗力量在此聚集，邪恶的仪式正在进行。",
+      "difficulty": "boss",
+      "enemyId": "dark_lord",
+      "background": "assets/images/ui/background/battle.jpg",
+      "rewards": {
+        "gold": 1000,
+        "experience": 1500,
+        "cards": ["legendary_card"]
+      }
+    }
+  ]

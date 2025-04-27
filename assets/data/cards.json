@@ -1,0 +1,239 @@
+[
+    {
+      "id": "attack_basic",
+      "name": "基本攻击",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成6点伤害",
+      "effect": { "type": "damage", "value": 6 },
+      "image": "assets/images/cards/attack_basic.png",
+      "price": 50
+    },
+    {
+      "id": "attack_heavy",
+      "name": "重击",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "造成12点伤害",
+      "effect": { "type": "damage", "value": 12 },
+      "image": "assets/images/cards/attack_heavy.png",
+      "price": 100
+    },
+    {
+      "id": "attack_multi",
+      "name": "连击",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "造成3次4点伤害",
+      "effect": { "type": "damage", "value": 4, "times": 3 },
+      "image": "assets/images/cards/attack_multi.png",
+      "price": 150
+    },
+    {
+      "id": "defense_basic",
+      "name": "基本防御",
+      "type": "defense",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得8点护盾",
+      "effect": { "type": "shield", "value": 8 },
+      "image": "assets/images/cards/defense_basic.png",
+      "price": 50
+    },
+    {
+      "id": "defense_strong",
+      "name": "坚固防御",
+      "type": "defense",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "获得15点护盾",
+      "effect": { "type": "shield", "value": 15 },
+      "image": "assets/images/cards/defense_strong.png",
+      "price": 100
+    },
+    {
+      "id": "skill_draw",
+      "name": "抽牌",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "抽2张牌",
+      "effect": { "type": "draw", "value": 2 },
+      "image": "assets/images/cards/skill_draw.png",
+      "price": 75
+    },
+    {
+      "id": "skill_energy",
+      "name": "能量涌动",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 0,
+      "description": "获得1点魔力",
+      "effect": { "type": "energy", "value": 1 },
+      "image": "assets/images/cards/skill_energy.png",
+      "price": 120
+    },
+    {
+      "id": "skill_weaken",
+      "name": "虚弱",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "敌人攻击力降低25%，持续2回合",
+      "effect": { "type": "weakness", "value": 0.25, "duration": 2 },
+      "image": "assets/images/cards/skill_weaken.png",
+      "price": 100
+    },
+    {
+      "id": "power_strength",
+      "name": "力量",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "永久增加3点攻击力",
+      "effect": { "type": "strength", "value": 3, "permanent": true },
+      "image": "assets/images/cards/power_strength.png",
+      "price": 200
+    },
+    {
+      "id": "skill_heal",
+      "name": "治疗",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "恢复10点生命值",
+      "effect": { "type": "healing", "value": 10 },
+      "image": "assets/images/cards/skill_heal.png",
+      "price": 100
+    },
+    {
+      "id": "attack_poison",
+      "name": "毒刃",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "造成8点伤害并施加3点毒性，持续3回合",
+      "effect": { 
+        "type": "damage", 
+        "value": 8,
+        "secondary": { "type": "poison", "value": 3, "duration": 3 }
+      },
+      "image": "assets/images/cards/attack_poison.png",
+      "price": 180
+    },
+    {
+      "id": "skill_thorns",
+      "name": "荆棘",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "获得5点荆棘效果，持续3回合",
+      "effect": { "type": "thorns", "value": 5, "duration": 3 },
+      "image": "assets/images/cards/skill_thorns.png",
+      "price": 130
+    },
+    {
+      "id": "attack_fire",
+      "name": "火球术",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "造成15点伤害并施加2点燃烧，持续2回合",
+      "effect": { 
+        "type": "damage", 
+        "value": 15,
+        "secondary": { "type": "burn", "value": 2, "duration": 2 }
+      },
+      "image": "assets/images/cards/attack_fire.png",
+      "price": 200
+    },
+    {
+      "id": "skill_stun",
+      "name": "眩晕打击",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "使敌人眩晕1回合",
+      "effect": { "type": "stun", "duration": 1 },
+      "image": "assets/images/cards/skill_stun.png",
+      "price": 180
+    },
+    {
+      "id": "power_dexterity",
+      "name": "敏捷",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "永久增加3点敏捷",
+      "effect": { "type": "dexterity", "value": 3, "permanent": true },
+      "image": "assets/images/cards/power_dexterity.png",
+      "price": 200
+    },
+    {
+      "id": "skill_discard",
+      "name": "弃牌",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 0,
+      "description": "弃掉所有手牌，每弃一张牌抽一张新牌",
+      "effect": { "type": "discard", "drawEqual": true },
+      "image": "assets/images/cards/skill_discard.png",
+      "price": 80
+    },
+    {
+      "id": "attack_lightning",
+      "name": "闪电链",
+      "type": "attack",
+      "rarity": "epic",
+      "cost": 3,
+      "description": "造成20点伤害",
+      "effect": { "type": "damage", "value": 20 },
+      "image": "assets/images/cards/attack_lightning.png",
+      "price": 250
+    },
+    {
+      "id": "defense_reflect",
+      "name": "反伤护盾",
+      "type": "defense",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "获得10点护盾并反弹50%伤害，持续2回合",
+      "effect": { 
+        "type": "shield", 
+        "value": 10,
+        "secondary": { "type": "reflect", "value": 0.5, "duration": 2 }
+      },
+      "image": "assets/images/cards/defense_reflect.png",
+      "price": 200
+    },
+    {
+      "id": "power_regeneration",
+      "name": "再生",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "每回合开始时恢复3点生命值，持续5回合",
+      "effect": { 
+        "type": "regeneration", 
+        "value": 3, 
+        "duration": 5,
+        "triggerTiming": "turnStart"
+      },
+      "image": "assets/images/cards/power_regeneration.png",
+      "price": 180
+    },
+    {
+      "id": "attack_legendary",
+      "name": "毁灭打击",
+      "type": "attack",
+      "rarity": "legendary",
+      "cost": 5,
+      "description": "造成40点伤害",
+      "effect": { "type": "damage", "value": 40 },
+      "image": "assets/images/cards/attack_legendary.png",
+      "price": 500
+    }
+  ]

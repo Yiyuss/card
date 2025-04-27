@@ -1,0 +1,122 @@
+[
+    {
+      "id": "first_victory",
+      "name": "初次勝利",
+      "description": "贏得你的第一場戰鬥",
+      "icon": "./assets/images/achievements/first_victory.png",
+      "requirement": "贏得1場戰鬥",
+      "reward": {
+        "type": "gold",
+        "value": 100
+      },
+      "hidden": false
+    },
+    {
+      "id": "card_collector",
+      "name": "卡牌收藏家",
+      "description": "收集10張不同的卡牌",
+      "icon": "./assets/images/achievements/card_collector.png",
+      "requirement": "收集10張不同卡牌",
+      "reward": {
+        "type": "card",
+        "value": "skill_draw"
+      },
+      "hidden": false
+    },
+    {
+      "id": "boss_slayer",
+      "name": "Boss獵人",
+      "description": "擊敗一個Boss敵人",
+      "icon": "./assets/images/achievements/boss_slayer.png",
+      "requirement": "擊敗任意Boss敵人",
+      "reward": {
+        "type": "gold",
+        "value": 300
+      },
+      "hidden": false
+    },
+    {
+      "id": "perfect_battle",
+      "name": "完美戰鬥",
+      "description": "在不失去任何生命值的情況下贏得戰鬥",
+      "icon": "./assets/images/achievements/perfect_battle.png",
+      "requirement": "不失去生命值贏得戰鬥",
+      "reward": {
+        "type": "card",
+        "value": "defense_strong"
+      },
+      "hidden": false
+    },
+    {
+      "id": "max_level",
+      "name": "滿級大師",
+      "description": "達到最高等級10級",
+      "icon": "./assets/images/achievements/max_level.png",
+      "requirement": "達到10級",
+      "reward": {
+        "type": "card",
+        "value": "power_strength"
+      },
+      "hidden": false
+    },
+    {
+      "id": "gold_hoarder",
+      "name": "財富積累者",
+      "description": "累積1000金幣",
+      "icon": "./assets/images/achievements/gold_hoarder.png",
+      "requirement": "累積1000金幣",
+      "reward": {
+        "type": "card",
+        "value": "skill_energy"
+      },
+      "hidden": false
+    },
+    {
+      "id": "card_master",
+      "name": "卡牌大師",
+      "description": "在一場戰鬥中使用15張卡牌",
+      "icon": "./assets/images/achievements/card_master.png",
+      "requirement": "一場戰鬥使用15張卡牌",
+      "reward": {
+        "type": "gold",
+        "value": 150
+      },
+      "hidden": false
+    },
+    {
+      "id": "combo_king",
+      "name": "連擊之王",
+      "description": "在一回合內造成30點傷害",
+      "icon": "./assets/images/achievements/combo_king.png",
+      "requirement": "一回合造成30點傷害",
+      "reward": {
+        "type": "card",
+        "value": "attack_multi"
+      },
+      "hidden": false
+    },
+    {
+      "id": "survivor",
+      "name": "倖存者",
+      "description": "在生命值低於10的情況下贏得戰鬥",
+      "icon": "./assets/images/achievements/survivor.png",
+      "requirement": "生命值低於10贏得戰鬥",
+      "reward": {
+        "type": "maxHealth",
+        "value": 10
+      },
+      "hidden": false
+    },
+    {
+      "id": "strategist",
+      "name": "戰略家",
+      "description": "在一場戰鬥中使用5種不同類型的卡牌",
+      "icon": "./assets/images/achievements/strategist.png",
+      "requirement": "使用5種不同類型卡牌",
+      "reward": {
+        "type": "maxMana",
+        "value": 1
+      },
+      "hidden": false
+    }
+  ]

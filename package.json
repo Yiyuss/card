@@ -1,0 +1,38 @@
+{
+    "name": "card-adventure",
+    "version": "1.0.0",
+    "description": "一个基于模块化设计的卡牌冒险游戏",
+    "main": "index.html",
+    "type": "module",
+    "scripts": {
+      "start": "serve .",
+      "dev": "serve ."
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/yourusername/card-adventure.git"
+    },
+    "keywords": [
+      "card-game",
+      "adventure",
+      "browser-game",
+      "javascript",
+      "html5"
+    ],
+    "author": "卡牌冒险团队",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/yourusername/card-adventure/issues"
+    },
+    "homepage": "https://github.com/yourusername/card-adventure#readme",
+    "dependencies": {
+      "howler": "^2.2.3"
+    },
+    "devDependencies": {
+      "serve": "^14.2.0"
+    },
+    "engines": {
+      "node": ">=14.0.0"
+    },
+    "private": true
+  }
