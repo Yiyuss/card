@@ -87,7 +87,7 @@ const GameState = {
 /**
  * 遊戲控制器
  */
-class GameController {
+export class GameController {
   constructor() {
     // 初始化日誌管理器
     this.logger = new Logger('GameController');
