@@ -564,64 +564,65 @@ showScreen(screenName) {
     }
   }
   
-  /**
+    /**
    * 更新關卡選擇屏幕
    * @private
    */
   _updateLevelSelect() {
     try {
-      const levelContainer = document.getElementById('level-grid');
+      const levelContainer = document.getElementById('level-select-container');
       if (!levelContainer) {
-        this.logger.warn('找不到關卡列表容器');
+        this.logger.warn('找不到關卡選擇容器元素');
         return;
       }
       
-      // 清空關卡列表
+      // 清空關卡容器
       levelContainer.innerHTML = '';
       
-      // 獲取已解鎖的關卡
-      const unlockedLevels = this.gameController.state.progress.unlockedLevels;
-      
-      // 獲取所有關卡數據
+      // 獲取所有關卡
       const levels = this.gameController.resourceManager.getAllLevels();
       
-      // 創建關卡按鈕
+      // 獲取已解鎖的關卡
+      const unlockedLevels = this.gameController.state.progress.unlockedLevels || [1];
+      
+      // 創建關卡元素
       levels.forEach(level => {
-        // 檢查關卡是否已解鎖
+        // 檢查關卡是否存在且有效
+        if (!level) {
+          return;
+        }
+        
         const isUnlocked = unlockedLevels.includes(level.id);
         
-        // 創建關卡按鈕
-        const levelBtn = document.createElement('div');
-        levelBtn.className = `level-btn ${isUnlocked ? 'unlocked' : 'locked'}`;
-        levelBtn.setAttribute('data-level-id', level.id);
+        // 創建關卡元素
+        const levelElement = document.createElement('div');
+        levelElement.className = `level-item ${isUnlocked ? 'unlocked' : 'locked'}`;
+        levelElement.setAttribute('data-level-id', level.id);
         
-        // 設置按鈕內容
-        levelBtn.innerHTML = `
-          <div class="level-name">${level.name}</div>
-          <div class="level-difficulty">${this.gameController.uiTexts.levelSelect.difficulty}: ${level.difficulty}</div>
-          ${isUnlocked ? '' : '<div class="level-locked-icon"></div>'}
+        // 設置關卡內容
+        levelElement.innerHTML = `
+          <div class="level-icon">
+            <img src="${isUnlocked ? level.icon : this.gameController.imageAssets.ui.icons.levelLocked}" alt="${level.name}">
+          </div>
+          <div class="level-info">
+            <div class="level-name">${isUnlocked ? level.name : '???'}</div>
+            <div class="level-description">${isUnlocked ? level.description : this.gameController.uiTexts.levelSelect.locked}</div>
+            ${isUnlocked && level.difficulty ? `<div class="level-difficulty">${this.gameController.uiTexts.levelSelect.difficulty[level.difficulty]}</div>` : ''}
+          </div>
         `;
         
-        // 設置點擊事件
+        // 添加點擊事件（僅對已解鎖的關卡）
         if (isUnlocked) {
-          levelBtn.addEventListener('click', () => {
+          levelElement.addEventListener('click', () => {
             this.gameController.triggerEvent('levelSelected', level.id);
-          });
-        } else {
-          levelBtn.addEventListener('click', () => {
-            this.showToast(this.gameController.uiTexts.levelSelect.levelLocked);
           });
         }
         
         // 添加到容器
-        levelContainer.appendChild(levelBtn);
+        levelContainer.appendChild(levelElement);
       });
       
-      // 更新返回按鈕文字
-      const backBtn = document.getElementById('level-select-back-btn');
-      if (backBtn) {
-        backBtn.textContent = this.gameController.uiTexts.common.back;
-      }
+      this.logger.debug('關卡選擇屏幕已更新');
     } catch (error) {
       this.logger.error('更新關卡選擇屏幕失敗', error);
     }
