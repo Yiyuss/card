@@ -983,4 +983,4 @@ export class EffectManager {
       }
     }
     
-    export { EffectManager };
+    
