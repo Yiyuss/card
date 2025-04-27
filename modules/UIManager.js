@@ -425,27 +425,33 @@ _setupSettingsListeners() {
   }
   
   /**
-   * 設置CSS變量
-   * @private
-   */
-  _setupCSSVariables() {
-    try {
-      const root = document.documentElement;
-      
-      // 設置圖片路徑變量
-      root.style.setProperty('--img-main-bg', `url('${this.gameController.imageAssets.backgrounds.main}')`);
-      root.style.setProperty('--img-logo', `url('${this.gameController.imageAssets.ui.logo}')`);
-      root.style.setProperty('--img-button-bg', `url('${this.gameController.imageAssets.ui.button}')`);
-      root.style.setProperty('--img-card-back', `url('${this.gameController.imageAssets.cards.back}')`);
-      root.style.setProperty('--img-health-bar', `url('${this.gameController.imageAssets.ui.healthBar}')`);
-      root.style.setProperty('--img-mana-bar', `url('${this.gameController.imageAssets.ui.manaBar}')`);
-      root.style.setProperty('--img-game-over-bg', `url('${this.gameController.imageAssets.backgrounds.gameOver}')`);
-      
-      this.logger.debug('CSS變量設置完成');
-    } catch (error) {
-      this.logger.error('設置CSS變量失敗', error);
-    }
+ * 設置CSS變量
+ * @private
+ */
+_setupCSSVariables() {
+  try {
+    const root = document.documentElement;
+    
+    // 設置圖片路徑變量
+    root.style.setProperty('--img-main-bg', `url('${this.gameController.imageAssets.ui.background.main}')`);
+    root.style.setProperty('--img-logo', `url('${this.gameController.imageAssets.ui.logo}')`);
+    root.style.setProperty('--img-button-bg', `url('${this.gameController.imageAssets.ui.button.normal}')`);
+    root.style.setProperty('--img-card-back', `url('${this.gameController.imageAssets.cards.back}')`);
+    root.style.setProperty('--img-health-bar', `url('${this.gameController.imageAssets.ui.bars.health}')`);
+    root.style.setProperty('--img-mana-bar', `url('${this.gameController.imageAssets.ui.bars.mana}')`);
+    root.style.setProperty('--img-game-over-bg', `url('${this.gameController.imageAssets.ui.background.gameOver}')`);
+    root.style.setProperty('--img-player-avatar', `url('${this.gameController.imageAssets.characters.player.avatar}')`);
+    root.style.setProperty('--img-enemy-default', `url('${this.gameController.imageAssets.characters.enemies.slime}')`);
+    root.style.setProperty('--img-effect-fire', `url('${this.gameController.imageAssets.effects.fire}')`);
+    root.style.setProperty('--img-effect-ice', `url('${this.gameController.imageAssets.effects.ice}')`);
+    root.style.setProperty('--img-effect-lightning', `url('${this.gameController.imageAssets.effects.lightning}')`);
+    root.style.setProperty('--img-effect-heal', `url('${this.gameController.imageAssets.effects.heal}')`);
+    
+    this.logger.debug('CSS變量設置完成');
+  } catch (error) {
+    this.logger.error('設置CSS變量失敗', error);
   }
+}
   
   /**
  * 顯示指定屏幕
