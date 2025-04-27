@@ -583,7 +583,7 @@ showScreen(screenName) {
       const unlockedLevels = this.gameController.state.progress.unlockedLevels;
       
       // 獲取所有關卡數據
-      const levels = this.gameController.resourceManager.getLevels();
+      const levels = this.gameController.resourceManager.getAllLevels();
       
       // 創建關卡按鈕
       levels.forEach(level => {
