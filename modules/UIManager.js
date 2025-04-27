@@ -570,7 +570,7 @@ showScreen(screenName) {
    */
   _updateLevelSelect() {
     try {
-      const levelContainer = document.getElementById('level-list');
+      const levelContainer = document.getElementById('level-grid');
       if (!levelContainer) {
         this.logger.warn('找不到關卡列表容器');
         return;
