@@ -187,7 +187,7 @@ export class GameController {
       
       // 選擇關卡事件
       this.addEventListener('levelSelected', (levelId) => {
-        this.startBattle(levelId);
+        this.battleManager.startBattle(levelId);
       });
       
       // 返回主菜單事件
