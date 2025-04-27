@@ -565,15 +565,31 @@ showScreen(screenName) {
   }
   
     /**
-   * 更新關卡選擇屏幕
-   * @private
-   */
-  _updateLevelSelect() {
+ * 更新關卡選擇屏幕
+ * @private
+ */
+_updateLevelSelect() {
     try {
-      const levelContainer = document.getElementById('level-select-container');
+      let levelContainer = document.getElementById('level-select-container');
+      
+      // 如果找不到容器元素，則創建一個
       if (!levelContainer) {
-        this.logger.warn('找不到關卡選擇容器元素');
-        return;
+        this.logger.info('找不到關卡選擇容器元素，正在創建...');
+        
+        // 確保關卡選擇屏幕存在
+        if (!this.screens.levelSelect) {
+          this.logger.error('找不到關卡選擇屏幕元素');
+          return;
+        }
+        
+        // 創建關卡容器
+        levelContainer = document.createElement('div');
+        levelContainer.id = 'level-select-container';
+        levelContainer.className = 'level-select-container';
+        
+        // 添加到關卡選擇屏幕
+        this.screens.levelSelect.appendChild(levelContainer);
+        this.logger.info('已創建關卡選擇容器元素');
       }
       
       // 清空關卡容器
