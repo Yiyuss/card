@@ -189,44 +189,61 @@ export class SoundManager {
   }
   
   /**
-   * 播放音效
-   * @param {string} soundKey - 音效的鍵名或路徑
-   */
-  play(soundKey) {
-    try {
-      if (!this.isInitialized) {
-        this.logger.warn('音效系統尚未初始化');
-        return;
-      }
-      
-      // 檢查是否是路徑還是鍵名
-      let sound;
-      if (typeof soundKey === 'string' && soundKey.includes('/')) {
-        // 如果是路徑，創建新的 Howl 對象
-        sound = new Howl({
-          src: [soundKey],
-          loop: false,
-          volume: this.soundVolume
-        });
-      } else {
-        // 如果是鍵名，使用預加載的音效
-        sound = this.sounds[soundKey];
-      }
-      
-      if (!sound) {
-        this.logger.warn(`找不到音效: ${soundKey}`);
-        return;
-      }
-      
-      // 播放音效
-      sound.volume(this.soundVolume);
-      sound.play();
-      
-      this.logger.debug(`播放音效: ${soundKey}`);
-    } catch (error) {
-      this.logger.error(`播放音效失敗: ${soundKey}`, error);
+ * 播放音效
+ * @param {string} soundPath - 音效文件路徑
+ * @param {Object} options - 播放選項
+ */
+play(soundPath, options = {}) {
+  try {
+    if (!soundPath) {
+      this.logger.warn('嘗試播放無效的音效路徑');
+      return;
     }
+    
+    // 創建音頻元素
+    const audio = new Audio();
+    
+    // 設置音頻屬性
+    audio.src = soundPath;
+    audio.volume = options.volume || this.soundVolume;
+    audio.loop = options.loop || false;
+    
+    // 正確處理 play() 返回的 Promise
+    const playPromise = audio.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        // 播放成功
+        this.logger.debug(`音效播放成功: ${soundPath}`);
+        
+        // 如果需要暫停，等待播放開始後再暫停
+        if (options.autoPause) {
+          setTimeout(() => {
+            audio.pause();
+          }, options.duration || 0);
+        }
+      }).catch(error => {
+        // 播放失敗
+        this.logger.error(`音效播放失敗: ${soundPath}`, error);
+        
+        // 檢查是否是因為資源不存在
+        if (error.name === 'NotSupportedError') {
+          this.logger.warn(`找不到支持的音效源: ${soundPath}`);
+        }
+      });
+    }
+    
+    // 保存音頻引用以便後續控制
+    if (options.id) {
+      this.activeSounds[options.id] = audio;
+    }
+    
+    return audio;
+  } catch (error) {
+    this.logger.error(`播放音效時出錯: ${soundPath}`, error);
+    return null;
   }
+}
   
   /**
    * 更新音量設置
