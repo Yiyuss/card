@@ -294,4 +294,5 @@ const UITexts = {
     return formattedText;
   }
   
-  export { getText, formatText, UITexts };
+   export { getText, formatText };
+   export const uiTexts = UITexts;
