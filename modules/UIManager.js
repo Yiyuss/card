@@ -429,29 +429,29 @@ _setupSettingsListeners() {
  * @private
  */
 _setupCSSVariables() {
-  try {
-    const root = document.documentElement;
-    
-    // 設置圖片路徑變量
-    root.style.setProperty('--img-main-bg', `url('${this.gameController.imageAssets.ui.background.main}')`);
-    root.style.setProperty('--img-logo', `url('${this.gameController.imageAssets.ui.logo}')`);
-    root.style.setProperty('--img-button-bg', `url('${this.gameController.imageAssets.ui.button.normal}')`);
-    root.style.setProperty('--img-card-back', `url('${this.gameController.imageAssets.cards.back}')`);
-    root.style.setProperty('--img-health-bar', `url('${this.gameController.imageAssets.ui.bars.health}')`);
-    root.style.setProperty('--img-mana-bar', `url('${this.gameController.imageAssets.ui.bars.mana}')`);
-    root.style.setProperty('--img-game-over-bg', `url('${this.gameController.imageAssets.ui.background.gameOver}')`);
-    root.style.setProperty('--img-player-avatar', `url('${this.gameController.imageAssets.characters.player.avatar}')`);
-    root.style.setProperty('--img-enemy-default', `url('${this.gameController.imageAssets.characters.enemies.slime}')`);
-    root.style.setProperty('--img-effect-fire', `url('${this.gameController.imageAssets.effects.fire}')`);
-    root.style.setProperty('--img-effect-ice', `url('${this.gameController.imageAssets.effects.ice}')`);
-    root.style.setProperty('--img-effect-lightning', `url('${this.gameController.imageAssets.effects.lightning}')`);
-    root.style.setProperty('--img-effect-heal', `url('${this.gameController.imageAssets.effects.heal}')`);
-    
-    this.logger.debug('CSS變量設置完成');
-  } catch (error) {
-    this.logger.error('設置CSS變量失敗', error);
+    try {
+      const root = document.documentElement;
+      
+      // 設置圖片路徑變量
+      root.style.setProperty('--img-main-bg', `url('${this.gameController.imageAssets.ui.background.main}')`);
+      root.style.setProperty('--img-logo', `url('${this.gameController.imageAssets.ui.logo}')`);
+      root.style.setProperty('--img-button-bg', `url('${this.gameController.imageAssets.ui.button.normal}')`);
+      root.style.setProperty('--img-card-back', `url('${this.gameController.imageAssets.cards.back}')`);
+      root.style.setProperty('--img-health-bar', `url('${this.gameController.imageAssets.ui.bars.health}')`);
+      root.style.setProperty('--img-mana-bar', `url('${this.gameController.imageAssets.ui.bars.mana}')`);
+      root.style.setProperty('--img-game-over-bg', `url('${this.gameController.imageAssets.ui.background.gameOver}')`);
+      root.style.setProperty('--img-player-avatar', `url('${this.gameController.imageAssets.characters.player.avatar}')`);
+      root.style.setProperty('--img-enemy-default', `url('${this.gameController.imageAssets.characters.enemies.slime}')`);
+      root.style.setProperty('--img-effect-fire', `url('${this.gameController.imageAssets.effects.fire}')`);
+      root.style.setProperty('--img-effect-ice', `url('${this.gameController.imageAssets.effects.ice}')`);
+      root.style.setProperty('--img-effect-lightning', `url('${this.gameController.imageAssets.effects.lightning}')`);
+      root.style.setProperty('--img-effect-heal', `url('${this.gameController.imageAssets.effects.heal}')`);
+      
+      this.logger.debug('CSS變量設置完成');
+    } catch (error) {
+      this.logger.error('設置CSS變量失敗', error);
+    }
   }
-}
   
   /**
  * 顯示指定屏幕
@@ -564,13 +564,13 @@ showScreen(screenName) {
     }
   }
   
-    /**
+  /**
  * 更新關卡選擇屏幕
  * @private
  */
 _updateLevelSelect() {
     try {
-      let levelContainer = document.getElementById('level-select-container');
+      let levelContainer = document.getElementById('level-grid');
       
       // 如果找不到容器元素，則創建一個
       if (!levelContainer) {
@@ -584,8 +584,8 @@ _updateLevelSelect() {
         
         // 創建關卡容器
         levelContainer = document.createElement('div');
-        levelContainer.id = 'level-select-container';
-        levelContainer.className = 'level-select-container';
+        levelContainer.id = 'level-grid';
+        levelContainer.className = 'level-grid';
         
         // 添加到關卡選擇屏幕
         this.screens.levelSelect.appendChild(levelContainer);
@@ -616,16 +616,16 @@ _updateLevelSelect() {
         levelElement.setAttribute('data-level-id', level.id);
         
         // 設置關卡內容
-        levelElement.innerHTML = `
-          <div class="level-icon">
-            <img src="${isUnlocked ? level.icon : this.gameController.imageAssets.ui.icons.levelLocked}" alt="${level.name}">
-          </div>
-          <div class="level-info">
-            <div class="level-name">${isUnlocked ? level.name : '???'}</div>
-            <div class="level-description">${isUnlocked ? level.description : this.gameController.uiTexts.levelSelect.locked}</div>
-            ${isUnlocked && level.difficulty ? `<div class="level-difficulty">${this.gameController.uiTexts.levelSelect.difficulty[level.difficulty]}</div>` : ''}
-          </div>
-        `;
+levelElement.innerHTML = `
+<div class="level-icon">
+  <img src="${isUnlocked ? level.icon : this.gameController.imageAssets.ui.icons.levelLocked}" alt="${level.name}">
+</div>
+<div class="level-info">
+  <div class="level-name">${isUnlocked ? level.name : '???'}</div>
+  <div class="level-description">${isUnlocked ? level.description : this.gameController.uiTexts.levelSelect.locked}</div>
+  ${isUnlocked && level.difficulty ? `<div class="level-difficulty">${level.difficulty}</div>` : ''}
+</div>
+`;
         
         // 添加點擊事件（僅對已解鎖的關卡）
         if (isUnlocked) {
